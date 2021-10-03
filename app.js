@@ -3,12 +3,12 @@ const app = express();
 
 
 app.disable('x-powered-by')
-// app.use(express.static('client'));
+app.use(express.static('client'));
 
-// //routes
-// app.get('/', (req,res)=>{
-//     res.sendFile(__dirname + '/index.html');
-// });
+//routes
+app.get('/', (req,res)=>{
+    res.sendFile(__dirname + '/index.html');
+});
 
 server = app.listen( process.env.PORT || 5000);
 
@@ -22,10 +22,10 @@ io.on('connection' , socket=>{
 		socket.emit('ring-it')
 	}
 
-	socket.on('rec',function(){
+	socket.on('ring-it',function(){
 		socket.emit('ring-it')
 	});
-	ring();
+
 })
 
 console.log(`running on ${server}`);
