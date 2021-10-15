@@ -3,13 +3,18 @@ $(function () {
     let socket = io.connect('https://ard-home.herokuapp.com');
 
     //buttons and inputs
-    // let btn = $("#btnn");
+    let btn = $("#btnn");
 
-    //Emit message
-    // // If send message btn is clicked
-    // btn.click(function(){
-        
+    btn.click(function(){
+        alert('Hello How Are you');
+        // socket.emit('ring-it')
+        socket.emit('1')
+
+    socket.on('1',function(){
         socket.emit('ring-it')
-        console.log('Ringing.....');
-    // });
+    })
+
+    
+        // console.log('Ringing.....');
+    });
 });
