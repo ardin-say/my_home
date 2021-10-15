@@ -7,7 +7,7 @@ $(function () {
 
     btn.click(function(){
         alert('Hello How Are you');
-        // socket.emit('ring-it')
+        socket.emit('ring-it')
         socket.emit('1')
 
     socket.on('1',function(){
