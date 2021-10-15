@@ -6,7 +6,7 @@ $(function () {
     let btn = $("#btnn");
 
     btn.click(function(){
-        alert('Hello How Are you');
+        
         socket.emit('ring-it')
         socket.emit('1')
 
